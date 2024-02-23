@@ -1,0 +1,39 @@
+{
+    // Defines launch configurations for debugging in VS Code (web or desktop).
+    // (used in conjunction with 'streamlit_debug.py')
+    //
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        // Remote debugging
+        {
+            "name": "Python: debugpy Remote Attach",
+            "type": "debugpy",
+            "request": "attach",
+            "connect": {
+                "host": "localhost",
+                "port": 8765
+            },
+            "justMyCode": false,
+            "redirectOutput": true,
+            "logToFile": true,
+            "pathMappings": [
+                {
+                    "localRoot": "${workspaceFolder}",
+                    "remoteRoot": "."
+                }
+            ]
+        },
+        // Local debugging
+        {
+            "name": "Python: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "env": {"DEBUG": "true"}
+        }
+    ]
+}
